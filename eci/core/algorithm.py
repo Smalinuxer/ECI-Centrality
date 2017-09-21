@@ -9,6 +9,8 @@ def Collective_Influence(G,d):
     all_counts = len(node_set)
 
     Collective_Influence_Collects = dict()
+    # Collective_Influence_Collects_Revert = dict()
+
     for nid in node_set:
         Interior_Center_set = []
         Center_set = [nid]  # 关键层
@@ -31,11 +33,19 @@ def Collective_Influence(G,d):
             Total_Reduced_Degree = Total_Reduced_Degree + (G.degree(id) - 1.0)
 
         Collective_Influence = (G.degree(nid) - 1.0) * Total_Reduced_Degree
-        Collective_Influence_Collects[nid] = Collective_Influence
-        count += 1
-        print "%d / %d" % (count, all_counts)
+        Collective_Influence_Collects[nid] =  Collective_Influence
+        # older = Collective_Influence_Collects_Revert.get(Collective_Influence)
+        #
+        # if older:
+        #     older.append(nid)
+        # else:
+        #     Collective_Influence_Collects_Revert[Collective_Influence] = [nid]
+
+        # count += 1
+        # print "%d / %d" % (count, all_counts)
 
     return Collective_Influence_Collects
+        # ,Collective_Influence_Collects_Revert
 
 def Enhanced_Collective_Influence_Native(G, d):
     #强化的Collective Influence, 参数d为考虑的范围radius。

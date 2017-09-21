@@ -6,6 +6,7 @@ conuts = 0
 
 def load_data(path):
     G = nx.Graph()
+    # G.remove_node()
     global conuts
     with open(path) as f:
         f_csv = csv.reader(f)
