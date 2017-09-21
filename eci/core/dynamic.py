@@ -29,10 +29,10 @@ def reduce_reinert(g,eci_dic,n=50,output_batch=500,model_name="test.csv"):
             raise ValueError('nid_btach_list more than 500')
 
         for nid in nids :
-            g.remove_node(nid)
+            gn.remove_node(nid)
 
-        eci_dic = Collective_Influence(g, 2)
-        print "reduce number : " + str(len(eci_dic))
+        eci_dic = Collective_Influence(gn, 2)
+        print "reduce number : " + str(len(eci_dic)) + " maxci : " + topn[0]
 
     f.close()
     # mydict.keys()[mydict.values().index(16)]
