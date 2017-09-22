@@ -39,3 +39,6 @@ def _load_edge(path,g):
             print "%s : %d / %d" % ("load_node", _now, conuts)
             g.add_edge(row[0],row[1])
     return g
+
+m1 = {1:2,2:3,3:3}
+print [m1.keys()[m1.values().index(3)] ]

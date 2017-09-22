@@ -5,8 +5,8 @@ import networkx as nx
 
 def Collective_Influence(G,d):
     node_set = G.nodes()
-    count = 0
-    all_counts = len(node_set)
+    # count = 0
+    # all_counts = len(node_set)
 
     Collective_Influence_Collects = dict()
     # Collective_Influence_Collects_Revert = dict()
