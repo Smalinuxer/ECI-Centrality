@@ -9,7 +9,6 @@ def reduce_reinert(g,eci_dic,n=50,output_batch=500,model_name="test.csv"):
     print "begin reduce function"
     nid_btach_list = list()
     f = open(temp_fidder + model_name, 'wb')
-    print "len(eci_dic) : " + str(len(eci_dic))
     while (len(eci_dic) != 0 ):
         if (len(eci_dic) < n):
             n = len(eci_dic)
@@ -31,7 +30,7 @@ def reduce_reinert(g,eci_dic,n=50,output_batch=500,model_name="test.csv"):
             gn.remove_node(nid)
 
         eci_dic = Collective_Influence(gn, 2)
-        print "reduce number : " + str(len(eci_dic)) + " maxci : " + topn[0]
+        print "reduce number : " + str(len(eci_dic)) + " maxci : " + str(topn[0])
 
     f.close()
     pass
@@ -39,7 +38,7 @@ def reduce_reinert(g,eci_dic,n=50,output_batch=500,model_name="test.csv"):
 def key_with_value(value,dicts):
     for k, v in dicts.iteritems():
         if v == value:
-            return v
+            return k
     return None
 
 
