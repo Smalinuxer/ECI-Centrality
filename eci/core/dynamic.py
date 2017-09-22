@@ -46,7 +46,9 @@ def key_with_value(value,dicts):
 def value_find_Key(values,dicts):
     result = []
     for v in values:
-        k = key_with_value(values,dicts)
+        k = key_with_value(v,dicts)
+        if not k:
+            raise ValueError("value can't find")
         del dicts[k]
         result.append(k)
 
